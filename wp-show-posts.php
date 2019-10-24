@@ -12,34 +12,34 @@ Text Domain: wp-show-posts
 */
 
 // No direct access, please
-if ( ! defined( 'ABSPATH' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 // Define the current version
 define( 'WPSP_VERSION', 0.5 );
 
 // Add defaults
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'inc/defaults.php';
+require_once dirname( __FILE__ ) . '/inc/defaults.php';
 
 // Add post type
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'admin/post-type.php';
+require_once dirname( __FILE__ ) . '/admin/post-type.php';
 
 // Add admin metabox
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'admin/metabox.php';
+require_once dirname( __FILE__ ) . '/admin/metabox.php';
 
 // Add admin AJAX
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'admin/ajax.php';
+require_once dirname( __FILE__ ) . '/admin/ajax.php';
 
 // Add resizer script
-if ( ! class_exists( 'WPSP_Resize' ) ) require_once plugin_dir_path( __FILE__ ) . 'inc/image-resizer.php';
+if ( ! class_exists( 'WPSP_Resize' ) ) require_once dirname( __FILE__ ) . '/inc/image-resizer.php';
 
 // Add functions
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'inc/functions.php';
+require_once dirname( __FILE__ ) . '/inc/functions.php';
 
 // Add admin functions
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'admin/admin.php';
+require_once dirname( __FILE__ ) . '/admin/admin.php';
 
 // Add widget
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'admin/widget.php';
+require_once dirname( __FILE__ ) . '/admin/widget.php';
 
 if ( ! function_exists( 'wpsp_load_textdomain' ) ) :
 /**
